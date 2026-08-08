@@ -4,13 +4,19 @@ PC Slowdown Diagnoser — FastAPI Backend
 Single endpoint: POST /diagnose
 - Accepts collector JSON
 - Runs the deterministic rules engine
+- Optionally rewrites issues via Gemini LLM for plain-English output
 - Returns prioritized issues list
 
 Run locally:
     uvicorn main:app --reload --port 8000
 
-Test:
+Test (raw engine output):
     curl -X POST http://localhost:8000/diagnose \
+         -H "Content-Type: application/json" \
+         -d @../collector/report.json
+
+Test (with LLM rewrite):
+    curl -X POST "http://localhost:8000/diagnose?rewrite=true" \
          -H "Content-Type: application/json" \
          -d @../collector/report.json
 """
@@ -22,19 +28,26 @@ import sys
 import time
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Request
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, field_validator
 
+# Load .env (for GEMINI_API_KEY)
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+
 # ---------------------------------------------------------------------------
-# Make rules_engine importable from sibling directory
+# Make rules_engine and llm_rewriter importable regardless of working dir
 # ---------------------------------------------------------------------------
-_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
+_BACKEND = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_BACKEND)
+for _p in (_ROOT, _BACKEND):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
 
 from rules_engine.engine import diagnose  # noqa: E402
+from llm_rewriter import rewrite_issues  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # App
@@ -97,6 +110,7 @@ class DiagnoseResponse(BaseModel):
     collected_at: str | None
     issue_count: int
     issues: list[Issue]
+    rewritten: bool = False
     engine_version: str = "0.1.0"
 
 
@@ -116,12 +130,23 @@ def root():
     summary="Diagnose a system report",
     response_description="Prioritised list of performance issues (high → low)",
 )
-def diagnose_report(report: CollectorReport):
+def diagnose_report(
+    report: CollectorReport,
+    rewrite: bool = Query(
+        False,
+        description=(
+            "If true, pass the rules engine output through the Gemini LLM "
+            "to rewrite issues in plain, friendly English."
+        ),
+    ),
+):
     """
     Accept a collector JSON report and run the deterministic rules engine.
 
-    Returns a prioritised list of issues — no AI calls, fully deterministic.
-    The LLM rewrite step will be layered on top in a later version.
+    If `rewrite=true`, the issues are passed through the Gemini LLM for
+    plain-English rewrites. The LLM never changes severity, evidence, or
+    offenders — it only rephrases the issue headline and fix text.
+    Falls back to raw engine output if the LLM call fails.
     """
     try:
         raw = report.model_dump()
@@ -129,10 +154,17 @@ def diagnose_report(report: CollectorReport):
     except Exception as exc:  # pragma: no cover
         raise HTTPException(status_code=500, detail=f"Rules engine error: {exc}") from exc
 
+    rewritten = False
+    if rewrite and issues:
+        original_issues = issues
+        issues = rewrite_issues(issues)
+        rewritten = issues is not original_issues  # True only if LLM ran successfully
+
     return DiagnoseResponse(
         collected_at=report.collected_at,
         issue_count=len(issues),
         issues=issues,
+        rewritten=rewritten,
     )
 
 
