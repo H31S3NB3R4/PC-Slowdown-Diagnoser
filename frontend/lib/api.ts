@@ -6,7 +6,8 @@ export async function runDiagnosis(
   report: CollectorReport,
   rewriteWithAi: boolean = true
 ): Promise<DiagnoseResponse> {
-  const url = `${API_BASE}/diagnose?rewrite=${rewriteWithAi}`;
+  const baseUrl = API_BASE.replace(/\/$/, "");
+  const url = `${baseUrl}/diagnose?rewrite=${rewriteWithAi}`;
 
   const response = await fetch(url, {
     method: "POST",

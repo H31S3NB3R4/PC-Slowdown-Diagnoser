@@ -119,6 +119,7 @@ class DiagnoseResponse(BaseModel):
 # ---------------------------------------------------------------------------
 
 @app.get("/", summary="Health check")
+@app.get("/api", summary="Health check")
 def root():
     """Simple health check — confirms the API is running."""
     return {"status": "ok", "service": "pc-slowdown-diagnoser"}
@@ -129,6 +130,11 @@ def root():
     response_model=DiagnoseResponse,
     summary="Diagnose a system report",
     response_description="Prioritised list of performance issues (high → low)",
+)
+@app.post(
+    "/api/diagnose",
+    response_model=DiagnoseResponse,
+    include_in_schema=False,
 )
 def diagnose_report(
     report: CollectorReport,
