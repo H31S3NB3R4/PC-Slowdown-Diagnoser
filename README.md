@@ -4,7 +4,7 @@
 
 ---
 
-## 💡 Core Principle
+##  Core Principle
 
 **The AI does NOT diagnose your computer.** 
 
@@ -12,7 +12,7 @@ Diagnosis is performed entirely by a 100% deterministic Python rules engine (fas
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌────────────────────┐      JSON       ┌────────────────────┐
@@ -38,7 +38,7 @@ Diagnosis is performed entirely by a 100% deterministic Python rules engine (fas
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Local Telemetry Collector**: Scans CPU, RAM usage, disk space & speed, autostart programs, system uptime, and runaway background processes without sending raw telemetry over the network.
 - **15 Deterministic Diagnostic Rules**: Evaluates memory pressure, thermal throttling, spinning HDDs vs SSDs, excessive startup apps, pending Windows updates, and long system uptimes.
@@ -48,7 +48,7 @@ Diagnosis is performed entirely by a 100% deterministic Python rules engine (fas
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Prerequisites
 - **Python 3.10+**
@@ -97,7 +97,7 @@ Open `http://localhost:3000` in your browser. Drag and drop your `report.json` (
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 .
