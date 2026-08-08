@@ -1,0 +1,27 @@
+{
+  "collected_at": "2026-08-09T00:00:00+00:00",
+  "cpu": { "model": "Intel Core i5", "usage_percent": 15.0, "temp_celsius": 48.0 },
+  "ram": {
+    "total_gb": 8.0,
+    "used_percent": 93.0,
+    "top_processes": [
+      { "pid": 1001, "name": "chrome.exe",  "ram_mb": 1800.0 },
+      { "pid": 1002, "name": "teams.exe",   "ram_mb": 900.0  },
+      { "pid": 1003, "name": "slack.exe",   "ram_mb": 600.0  },
+      { "pid": 1004, "name": "outlook.exe", "ram_mb": 400.0  },
+      { "pid": 1005, "name": "zoom.exe",    "ram_mb": 300.0  }
+    ]
+  },
+  "disk": { "free_percent": 40.0, "type": "SSD", "read_speed_mbps": 430.0, "write_speed_mbps": 280.0 },
+  "startup": { "count": 5, "programs": [
+    { "name": "OneDrive", "command": "OneDrive.exe /background" }
+  ]},
+  "os": { "version": "Windows 11 (10.0.22621)", "uptime_hours": 10.0, "pending_updates": 2 },
+  "background": {
+    "process_count": 130,
+    "top_cpu_processes": [
+      { "pid": 0,    "name": "System Idle Process", "cpu_percent": 85.0 },
+      { "pid": 1001, "name": "chrome.exe",           "cpu_percent": 8.0  }
+    ]
+  }
+}

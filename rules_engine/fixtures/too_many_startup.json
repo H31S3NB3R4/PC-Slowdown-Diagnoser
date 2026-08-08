@@ -1,0 +1,41 @@
+{
+  "collected_at": "2026-08-09T00:00:00+00:00",
+  "cpu": { "model": "Intel Core i5", "usage_percent": 22.0, "temp_celsius": 50.0 },
+  "ram": {
+    "total_gb": 16.0,
+    "used_percent": 55.0,
+    "top_processes": [
+      { "pid": 3001, "name": "explorer.exe", "ram_mb": 180.0 }
+    ]
+  },
+  "disk": { "free_percent": 35.0, "type": "SSD", "read_speed_mbps": 420.0, "write_speed_mbps": 260.0 },
+  "startup": {
+    "count": 20,
+    "programs": [
+      { "name": "OneDrive",   "command": "OneDrive.exe /background" },
+      { "name": "Spotify",    "command": "Spotify.exe" },
+      { "name": "Teams",      "command": "Teams.exe" },
+      { "name": "Discord",    "command": "Discord.exe" },
+      { "name": "Steam",      "command": "steam.exe -silent" },
+      { "name": "Zoom",       "command": "Zoom.exe" },
+      { "name": "Dropbox",    "command": "Dropbox.exe" },
+      { "name": "EpicGames",  "command": "EpicGamesLauncher.exe" },
+      { "name": "AdobeARM",   "command": "AdobeARM.exe" },
+      { "name": "Skype",      "command": "Skype.exe" },
+      { "name": "Slack",      "command": "Slack.exe" },
+      { "name": "GoogleDrive","command": "googledrivesync.exe" },
+      { "name": "iTunes",     "command": "iTunes.exe /AutoLaunch" },
+      { "name": "VLC",        "command": "vlc.exe" },
+      { "name": "Canva",      "command": "Canva.exe --start-availability-check-agent" },
+      { "name": "RiotClient", "command": "RiotClientServices.exe --launch-background-mode" }
+    ]
+  },
+  "os": { "version": "Windows 11 (10.0.22621)", "uptime_hours": 200.0, "pending_updates": 15 },
+  "background": {
+    "process_count": 260,
+    "top_cpu_processes": [
+      { "pid": 0,    "name": "System Idle Process", "cpu_percent": 78.0 },
+      { "pid": 3001, "name": "explorer.exe",         "cpu_percent": 5.0  }
+    ]
+  }
+}

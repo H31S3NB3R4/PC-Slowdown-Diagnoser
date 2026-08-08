@@ -1,0 +1,53 @@
+{
+  "collected_at": "2026-08-09T00:00:00+00:00",
+  "cpu": {
+    "model": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "usage_percent": 23.5,
+    "temp_celsius": 58.2
+  },
+  "ram": {
+    "total_gb": 16.0,
+    "used_percent": 78.4,
+    "top_processes": [
+      { "pid": 4832, "name": "chrome.exe",   "ram_mb": 1240.5 },
+      { "pid": 2210, "name": "teams.exe",    "ram_mb": 890.3  },
+      { "pid": 9012, "name": "code.exe",     "ram_mb": 450.1  },
+      { "pid": 1124, "name": "outlook.exe",  "ram_mb": 310.7  },
+      { "pid": 3344, "name": "slack.exe",    "ram_mb": 275.0  }
+    ]
+  },
+  "disk": {
+    "free_percent": 8.3,
+    "type": "HDD",
+    "read_speed_mbps": 12.4,
+    "write_speed_mbps": 3.1
+  },
+  "startup": {
+    "count": 17,
+    "programs": [
+      { "name": "OneDrive",    "command": "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe /background" },
+      { "name": "Spotify",     "command": "C:\\Users\\user\\AppData\\Roaming\\Spotify\\Spotify.exe" },
+      { "name": "Teams",       "command": "C:\\Users\\user\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart" },
+      { "name": "Discord",     "command": "C:\\Users\\user\\AppData\\Local\\Discord\\Update.exe --processStart" },
+      { "name": "Steam",       "command": "C:\\Program Files (x86)\\Steam\\steam.exe -silent" },
+      { "name": "Zoom",        "command": "C:\\Users\\user\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe" },
+      { "name": "Dropbox",     "command": "C:\\Program Files (x86)\\Dropbox\\Client\\Dropbox.exe" },
+      { "name": "EpicGames",   "command": "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe" }
+    ]
+  },
+  "os": {
+    "version": "Windows 11 (10.0.22621)",
+    "uptime_hours": 187.4,
+    "pending_updates": 12
+  },
+  "background": {
+    "process_count": 214,
+    "top_cpu_processes": [
+      { "pid": 4832, "name": "chrome.exe",       "cpu_percent": 18.2 },
+      { "pid": 2210, "name": "MsMpEng.exe",      "cpu_percent": 12.5 },
+      { "pid": 7701, "name": "SearchIndexer.exe", "cpu_percent": 9.8  },
+      { "pid": 1200, "name": "svchost.exe",       "cpu_percent": 6.3  },
+      { "pid": 9012, "name": "code.exe",          "cpu_percent": 5.1  }
+    ]
+  }
+}

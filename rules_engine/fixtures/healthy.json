@@ -1,0 +1,25 @@
+{
+  "collected_at": "2026-08-09T00:00:00+00:00",
+  "cpu": { "model": "Intel Core i7", "usage_percent": 12.0, "temp_celsius": 42.0 },
+  "ram": {
+    "total_gb": 16.0,
+    "used_percent": 38.5,
+    "top_processes": [
+      { "pid": 100, "name": "explorer.exe", "ram_mb": 120.0 },
+      { "pid": 200, "name": "svchost.exe",  "ram_mb": 80.0  }
+    ]
+  },
+  "disk": { "free_percent": 55.0, "type": "SSD", "read_speed_mbps": 450.0, "write_speed_mbps": 300.0 },
+  "startup": { "count": 4, "programs": [
+    { "name": "SecurityHealth", "command": "SecurityHealthSystray.exe" },
+    { "name": "OneDrive", "command": "OneDrive.exe /background" }
+  ]},
+  "os": { "version": "Windows 11 (10.0.22621)", "uptime_hours": 5.0, "pending_updates": 0 },
+  "background": {
+    "process_count": 95,
+    "top_cpu_processes": [
+      { "pid": 0,   "name": "System Idle Process", "cpu_percent": 88.0 },
+      { "pid": 100, "name": "explorer.exe",         "cpu_percent": 3.0  }
+    ]
+  }
+}

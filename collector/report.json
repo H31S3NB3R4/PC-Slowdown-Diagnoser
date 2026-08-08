@@ -1,0 +1,125 @@
+{
+  "collected_at": "2026-08-08T20:18:43.183051+00:00",
+  "cpu": {
+    "model": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+    "usage_percent": 50.6,
+    "temp_celsius": null
+  },
+  "ram": {
+    "total_gb": 7.89,
+    "used_percent": 96.4,
+    "top_processes": [
+      {
+        "pid": 6572,
+        "name": "OneDrive.exe",
+        "ram_mb": 594.1
+      },
+      {
+        "pid": 3416,
+        "name": "MemCompression",
+        "ram_mb": 523.8
+      },
+      {
+        "pid": 4336,
+        "name": "Antigravity IDE.exe",
+        "ram_mb": 471.4
+      },
+      {
+        "pid": 13440,
+        "name": "Antigravity IDE.exe",
+        "ram_mb": 289.0
+      },
+      {
+        "pid": 2436,
+        "name": "chrome.exe",
+        "ram_mb": 286.5
+      }
+    ]
+  },
+  "disk": {
+    "free_percent": 29.6,
+    "type": "HDD",
+    "read_speed_mbps": 0.53,
+    "write_speed_mbps": 0.83
+  },
+  "startup": {
+    "count": 10,
+    "programs": [
+      {
+        "name": "SecurityHealth",
+        "command": "%windir%\\system32\\SecurityHealthSystray.exe"
+      },
+      {
+        "name": "ETDCtrl",
+        "command": "%ProgramFiles%\\Elantech\\ETDCtrl.exe"
+      },
+      {
+        "name": "Riot Vanguard",
+        "command": "\"C:\\Program Files\\Riot Vanguard\\vgtray.exe\""
+      },
+      {
+        "name": "OneDrive",
+        "command": "\"C:\\Users\\SMARt\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background"
+      },
+      {
+        "name": "RiotClient",
+        "command": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-background-mode"
+      },
+      {
+        "name": "Steam",
+        "command": "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent"
+      },
+      {
+        "name": "CanvaAutoLaunchAvailabilityCheckAgent",
+        "command": "\"C:\\Users\\SMARt\\AppData\\Local\\Programs\\Canva\\Canva.exe\" --start-availability-check-agent"
+      },
+      {
+        "name": "MicrosoftEdgeAutoLaunch_D1036EEBE232739707DCCA085C5E61DD",
+        "command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start"
+      },
+      {
+        "name": "Adobe ARM",
+        "command": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\ARM\\1.0\\AdobeARM.exe\""
+      },
+      {
+        "name": "SunJavaUpdateSched",
+        "command": "\"C:\\Program Files (x86)\\Common Files\\Java\\Java Update\\jusched.exe\""
+      }
+    ]
+  },
+  "os": {
+    "version": "Windows 11 (10.0.26200)",
+    "uptime_hours": 2.9,
+    "pending_updates": 5
+  },
+  "background": {
+    "process_count": 280,
+    "top_cpu_processes": [
+      {
+        "pid": 0,
+        "name": "System Idle Process",
+        "cpu_percent": 482.2
+      },
+      {
+        "pid": 6572,
+        "name": "OneDrive.exe",
+        "cpu_percent": 153.6
+      },
+      {
+        "pid": 4336,
+        "name": "Antigravity IDE.exe",
+        "cpu_percent": 100.2
+      },
+      {
+        "pid": 2792,
+        "name": "python3.13.exe",
+        "cpu_percent": 36.3
+      },
+      {
+        "pid": 9608,
+        "name": "Antigravity IDE.exe",
+        "cpu_percent": 15.9
+      }
+    ]
+  }
+}
